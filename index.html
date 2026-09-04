@@ -453,7 +453,7 @@ textarea{
 <div id="sky" class="sky"></div>
 
 <audio id="bgMusic" loop>
-  dreamy-night.mp3
+  <source src="dreamy-night.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
@@ -729,11 +729,18 @@ function breathingGuide(){
 breathingGuide();
 setInterval(breathingGuide,10000);
 
-const music=document.getElementById("bgMusic");
+const music = document.getElementById("bgMusic");
 
-document.addEventListener("click",()=>{
- music.play().catch(()=>{});
-},{once:true});
+function startMusic() {
+    music.volume = 0.3; // softer volume
+
+    music.play().catch(err => {
+        console.log("Autoplay blocked:", err);
+    });
+}
+
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
 
 function toggleMusic(){
 
