@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For When You're Sleeping 🌙</title>
+
+https://fonts.googleapis.com
+<link rel="preconnect" href="https://fonts.gstatic.comogleapis.com/css2?family=Quicksand:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheetgba(255,255,255,.08);
+  --glass-border:rgba(255,255,255,.14);
+  --text:#ffffff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:var(--text);
+  font-family:'Quicksand',sans-serif;
+
+  background:
+      radial-gradient(circle at top,
+      #7c6fe6 0%,
+      #36407a 35%,
+      #1a2147 70%,
+      #091022 100%);
+}
+
+.sky{
+  position:fixed;
+  inset:0;
+  z-index:-10;
+}
+
+.star{
+  position:absolute;
+  border-radius:50%;
+  background:white;
+  animation:twinkle infinite ease-in-out;
+}
+
+@keyframes twinkle{
+  0%,100%{opacity:.2;}
+  50%{opacity:1;}
+}
+
+.firefly{
+  position:absolute;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#fff5af;
+
+  box-shadow:
+  0 0 8px #fff8b6,
+  0 0 15px #fff8b6;
+
+  animation:float linear infinite;
+}
+
+@keyframes float{
+  from{
+      transform:translateY(100vh);
+  }
+  to{
+      transform:translateY(-120px);
+  }
+}
+
+.shooting-star{
+  position:fixed;
+  width:140px;
+  height:2px;
+
+  border-radius:999px;
+
+  background:
+      linear-gradient(
+      90deg,
+      rgba(255,255,255,0),
+      rgba(255,255,255,1)
+      );
+
+  z-index:-5;
+  pointer-events:none;
+
+  animation:shoot 2s linear forwards;
+}
+
+@keyframes shoot{
+  0%{
+      opacity:1;
+      transform:
+      translate(0,0)
+      rotate(-35deg);
+  }
+
+  100%{
+      opacity:0;
+      transform:
+      translate(-600px,300px)
+      rotate(-35deg);
+  }
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:35px 20px 80px;
+}
+
+.hero{
+  text-align:center;
+}
+
+.moon{
+  width:170px;
+  height:170px;
+
+  margin:30px auto;
+
+  border-radius:50%;
+
+  background:
+      radial-gradient(
+      circle at 35% 35%,
+      #ffffff,
+      #fff9dd,
+      #ffe8a5
+      );
+
+  box-shadow:
+      0 0 30px rgba(255,230,150,.7),
+      0 0 80px rgba(255,230,150,.25),
+      0 0 160px rgba(255,230,150,.15);
+
+  animation:breatheMoon 6s ease-in-out infinite;
+}
+
+@keyframes breatheMoon{
+  0%,100%{
+      transform:scale(1);
+  }
+  50%{
+      transform:scale(1.06);
+  }
+}
+
+h1{
+  font-size:2.7rem;
+  margin-bottom:14px;
+}
+
+.subtitle{
+  line-height:1.9;
+  max-width:580px;
+  margin:auto;
+}
+
+.card{
+  margin-top:25px;
+
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+
+  backdrop-filter:blur(16px);
+
+  border-radius:28px;
+  padding:24px;
+}
+
+.card h2{
+  margin-bottom:12px;
+}
+
+.btn{
+  width:100%;
+  border:none;
+  cursor:pointer;
+
+  color:white;
+
+  padding:15px;
+
+  border-radius:18px;
+
+  background:
+      linear-gradient(
+      135deg,
+      #8f7cf2,
+      #d9a0dd
+      );
+
+  transition:.3s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.hidden{
+  display:none;
+}
+
+.steps{
+  margin-top:20px;
+  line-height:2;
+}
+
+.affirmation{
+  text-align:center;
+  margin-top:20px;
+  font-size:1.25rem;
+  line-height:1.8;
+  color:#fff2b4;
+}
+
+.letter{
+  font-family:'Caveat',cursive;
+  font-size:1.8rem;
+  line-height:1.7;
+}
+
+.note-box{
+  margin-top:15px;
+  padding:18px;
+
+  border-radius:16px;
+
+  min-height:90px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  background:
+      rgba(255,255,255,.05);
+}
+
+.jar{
+  text-align:center;
+  font-size:4rem;
+  cursor:pointer;
+  user-select:none;
+}
+
+.star-btn{
+  display:block;
+  margin:auto;
+
+  background:none;
+  border:none;
+
+  font-size:5rem;
+  cursor:pointer;
+
+  animation:pulseStar 3s infinite;
+}
+
+@keyframes pulseStar{
+  50%{
+      transform:scale(1.15);
+  }
+}
+
+textarea{
+  width:100%;
+  height:180px;
+
+  border:none;
+  outline:none;
+
+  color:white;
+
+  padding:15px;
+
+  border-radius:18px;
+
+  background:
+      rgba(255,255,255,.06);
+}
+
+textarea::placeholder{
+  color:rgba(255,255,255,.7);
+}
+
+audio{
+  width:100%;
+}
+
+.music-button{
+  position:fixed;
+
+  right:20px;
+  bottom:20px;
+
+  width:60px;
+  height:60px;
+
+  border:none;
+  border-radius:50%;
+
+  font-size:1.2rem;
+
+  cursor:pointer;
+}
+
+.footer{
+  text-align:center;
+  margin-top:40px;
+  line-height:1.8;
+}
+
+/* Hold My Hand */
+
+#handZone{
+  text-align:center;
+  padding:15px;
+}
+
+#heartPulse{
+  width:120px;
+  height:120px;
+
+  margin:18px auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:4rem;
+
+  border-radius:50%;
+
+  cursor:pointer;
+  user-select:none;
+
+  background:
+      radial-gradient(
+      circle,
+      rgba(255,192,203,.35),
+      rgba(255,192,203,.05)
+      );
+
+  transition:.3s;
+}
+
+#heartPulse.holding{
+  animation:heartbeat 1.3s infinite;
+
+  box-shadow:
+      0 0 25px rgba(255,180,220,.7),
+      0 0 60px rgba(255,180,220,.3);
+}
+
+@keyframes heartbeat{
+  0%,100%{
+      transform:scale(1);
+  }
+  25%{
+      transform:scale(1.15);
+  }
+  50%{
+      transform:scale(1.05);
+  }
+  75%{
+      transform:scale(1.18);
+  }
+}
+
+#handMessage{
+  min-height:30px;
+}
+
+/* Breathing */
+
+.breathing-container{
+  text-align:center;
+}
+
+#breathingCircle{
+  width:180px;
+  height:180px;
+
+  margin:10px auto 20px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+      radial-gradient(
+      circle,
+      rgba(175,185,255,.85),
+      rgba(110,120,255,.12)
+      );
+
+  box-shadow:
+      0 0 35px rgba(175,185,255,.4);
+
+  animation:breatheCycle 10s infinite ease-in-out;
+}
+
+@keyframes breatheCycle{
+  0%{
+      transform:scale(.9);
+  }
+
+  40%{
+      transform:scale(1.25);
+  }
+
+  60%{
+      transform:scale(1.25);
+  }
+
+  100%{
+      transform:scale(.9);
+  }
+}
+
+#breathingText{
+  font-size:1.1rem;
+}
+
+@media(max-width:600px){
+
+  h1{
+      font-size:2rem;
+  }
+
+  .moon{
+      width:130px;
+      height:130px;
+  }
+
+  .letter{
+      font-size:1.5rem;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div id="sky" class="sky"></div>
+
+<audio id="bgMusic" loop>
+  dreamy-night.mp3
+</audio>
+
+<div class="container">
+
+  <div class="hero">
+
+      <div class="moon"></div>
+
+      <h1>For When You're Sleeping 🌙</h1>
+
+      <p class="subtitle">
+          Hi love...
+          <br><br>
+          If you woke up feeling confused, scared, or unsettled,
+          stay here with me for a little while.
+          <br><br>
+          Nothing needs to be figured out right now.
+          <br><br>
+          You're safe.
+          <br>
+          You're home.
+          <br>
+          You're loved.
+          <br><br>
+          Just breathe. I'm here. ❤️
+      </p>
+
+  </div>
+
+  <div class="card">
+
+      <h2>🫶 If You're Awake Right Now</h2>
+
+      <button class="btn" onclick="toggleGrounding()">
+          Stay With Me A Minute
+      </button>
+
+      <div id="grounding" class="hidden">
+
+          <div class="steps">
+              🌙 Look around the room.<br>
+              🌙 Name three things you can see.<br>
+              🌙 Take one slow breath.<br>
+              🌙 Feel the bed beneath you.<br>
+              🌙 Take a sip of water.<br>
+              🌙 Relax your shoulders.
+          </div>
+
+          <div class="affirmation">
+              I am awake.<br>
+              I am safe.<br>
+              It was only a dream.<br>
+              This feeling will pass. ❤️
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="card">
+
+      <h2>💌 A Letter From Me</h2>
+
+      <div class="letter">
+          My love,
+
+          if tonight feels difficult,
+          please don't try to solve everything right now.
+
+          Just breathe.
+
+          Morning will come.
+
+          And when it does,
+          you'll still be loved exactly the same as you are in this moment.
+      </div>
+
+  </div>
+
+  <div class="card">
+
+      <h2>❤️ Open When You Miss Me</h2>
+
+      <div class="jar" onclick="newLoveNote()">
+          💌
+      </div>
+
+      <div class="note-box" id="loveNote">
+          Tap the letter ❤️
+      </div>
+
+  </div>
+
+  <div class="card">
+
+      <h2>🤗 A Little Hug</h2>
+
+      <button class="btn" onclick="sendHug()">
+          Send Me A Hug
+      </button>
+
+      <div class="note-box" id="hugMessage">
+          Whenever you need one ❤️
+      </div>
+
+  </div>
+
+  <div class="card">
+
+      <h2>🤝 Hold My Hand</h2>
+
+      <p style="margin-bottom:15px;">
+          Press and hold the heart for a little while.
+      </p>
+
+      <div id="handZone">
+
+          <div id="heartPulse">
+              ❤️
+          </div>
+
+          <div id="handMessage">
+              I'm right here.
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="card">
+
+      <h2>🌬️ Breathe With Me</h2>
+
+      <div class="breathing-container">
+
+          <div id="breathingCircle">
+              Breathe
+          </div>
+
+          <div id="breathingText">
+              Inhale...
+          </div>
+
+      </div>
+
+  </div>
+
+  <div class="card">
+
+      <h2>🎧 Hear My Voice</h2>
+
+      <p>Replace this audio with your own recording.</p>
+
+      <br>
+
+      <audio controls>
+          goodnight.mp3
+      </audio>
+
+  </div>
+
+  <div class="card">
+
+      <h2>🌌 Our Star</h2>
+
+      <button class="star-btn" onclick="ourStar()">
+          ⭐
+      </button>
+
+      <div class="note-box" id="starText">
+          Touch the star ✨
+      </div>
+
+  </div>
+
+  <div class="card">
+
+      <h2>🌅 Morning Journal</h2>
+
+      <textarea placeholder="How are you feeling this morning?"></textarea>
+
+  </div>
+
+  <div class="footer">
+      If the night feels too loud...
+      <br><br>
+      Stay here.
+      <br>
+      I'll keep you company until morning.
+      <br><br>
+      ❤️
+  </div>
+
+</div>
+
+<button class="music-button" onclick="toggleMusic()">
+🎵
+</button>
+
+<script>
+
+const sky=document.getElementById("sky");
+
+/* Stars */
+for(let i=0;i<150;i++){
+
+  const star=document.createElement("div");
+
+  star.className="star";
+
+  const size=Math.random()*3+1;
+
+  star.style.width=size+"px";
+  star.style.height=size+"px";
+
+  star.style.left=Math.random()*100+"%";
+  star.style.top=Math.random()*100+"%";
+
+  star.style.animationDuration=
+  (3+Math.random()*5)+"s";
+
+  sky.appendChild(star);
+}
+
+/* Fireflies */
+for(let i=0;i<20;i++){
+
+  const firefly=document.createElement("div");
+
+  firefly.className="firefly";
+
+  firefly.style.left=Math.random()*100+"%";
+
+  firefly.style.animationDuration=
+  (15+Math.random()*15)+"s";
+
+  firefly.style.animationDelay=
+  Math.random()*15+"s";
+
+  sky.appendChild(firefly);
+}
+
+/* Shooting stars */
+function createShootingStar(){
+
+  const star=document.createElement("div");
+
+  star.className="shooting-star";
+
+  star.style.top=(Math.random()*40)+"%";
+  star.style.left=(70+Math.random()*30)+"%";
+
+  document.body.appendChild(star);
+
+  setTimeout(()=>{
+      star.remove();
+  },2000);
+}
+
+setTimeout(createShootingStar,2000);
+setInterval(createShootingStar,5000);
+
+/* Grounding */
+function toggleGrounding(){
+  document.getElementById("grounding")
+  .classList.toggle("hidden");
+}
+
+/* Love notes */
+
+const notes=[
+  "Even at 3 AM, you're deeply loved ❤️",
+  "If you're awake right now, imagine me holding your hand.",
+  "You're my favorite person in the universe 🌙",
+  "I wish I could hug you through the screen.",
+  "You never have to face difficult nights alone.",
+  "My favorite place is wherever you are.",
+  "I'm proud of you.",
+  "I love you more than yesterday and less than tomorrow."
+];
+
+function newLoveNote(){
+
+  document.getElementById("loveNote").innerHTML=
+  notes[Math.floor(Math.random()*notes.length)];
+}
+
+/* Hug */
+
+function sendHug(){
+
+  const hugs=[
+
+  "🤗 I'm hugging you right now.",
+
+  "💜 You don't have to carry tonight alone.",
+
+  "🌙 Breathe. I'm here with you.",
+
+  "✨ You're safe. Nothing bad is happening right now.",
+
+  "❤️ Rest, love. Morning is coming."
+
+  ];
+
+  document.getElementById("hugMessage").innerHTML=
+  hugs[Math.floor(Math.random()*hugs.length)];
+
+  if(navigator.vibrate){
+      navigator.vibrate([
+          100,60,
+          100,60,
+          100,60,
+          250
+      ]);
+  }
+}
+
+/* Hold my hand */
+
+const heart=document.getElementById("heartPulse");
+const handMessage=document.getElementById("handMessage");
+
+const handMessages=[
+  "🤍 I'm holding your hand.",
+  "🌙 You're safe with me.",
+  "✨ One breath at a time.",
+  "💜 You are not alone tonight.",
+  "🤗 Stay here for a moment.",
+  "❤️ You never have to face tonight alone."
+];
+
+function startHolding(){
+
+  heart.classList.add("holding");
+
+  handMessage.innerHTML=
+  handMessages[
+      Math.floor(Math.random()*handMessages.length)
+  ];
+
+  if(navigator.vibrate){
+      navigator.vibrate([50,50,50]);
+  }
+}
+
+function stopHolding(){
+
+  heart.classList.remove("holding");
+
+  handMessage.innerHTML=
+  "I'm still here ❤️";
+}
+
+heart.addEventListener("mousedown",startHolding);
+heart.addEventListener("mouseup",stopHolding);
+
+heart.addEventListener("touchstart",startHolding,{passive:true});
+heart.addEventListener("touchend",stopHolding);
+
+/* Breathing guide */
+
+const breathingText=
+document.getElementById("breathingText");
+
+function breathingGuide(){
+
+  breathingText.innerHTML=
+  "🌬️ Inhale slowly...";
+
+  setTimeout(()=>{
+      breathingText.innerHTML=
+      "✨ Hold...";
+  },4000);
+
+  setTimeout(()=>{
+      breathingText.innerHTML=
+      "🌙 Exhale gently...";
+  },6000);
+}
+
+breathingGuide();
+setInterval(breathingGuide,10000);
+
+/* Star */
+
+function ourStar(){
+
+  document.getElementById("starText").innerHTML=
+  "✨ I found you.<br><br>No matter what the night showed you, imagine me sitting beside you. Take a breath. Morning is already on its way. ❤️";
+}
+
+/* Audio */
+
+const music=document.getElementById("bgMusic");
+
+document.addEventListener("click",()=>{
+
+  music.play().catch(()=>{});
+
+},{once:true});
+
+function toggleMusic(){
+
+  if(music.paused){
+      music.play();
+  }else{
+      music.pause();
+  }
+}
+
+/* Morning greeting */
+
+const hour=new Date().getHours();
+
+if(hour>=6){
+
+  document.querySelector(".subtitle").innerHTML=
+  "🌅 Good morning, love.<br><br>You made it through another night. I'm proud of you. ❤️";
+}
+
+</script>
+
+</body>
+</html>
